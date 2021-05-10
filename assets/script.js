@@ -86,8 +86,6 @@ function generatePassword() {
   }
   // return passwordOptions;
   console.log(passwordOptions,"passwordOptions");
-  
+
   return newPassword;
 }
-
-// alert(`${options}`);

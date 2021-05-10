@@ -1,17 +1,4 @@
 // Assignment code here
-// var randomLength = function () {
-//     length = Math.random();
-
-//     length = parseInt(length * 100);
-//     length = (length % 7) + 6
-// }
-
-const passwordOptions = {
-  upperLetters: randomUpper,
-  lowerLetters: randomLower,
-  numberChar: randomNumbers,
-  specialChar: randomChar
-}
 
 function randomUpper() {
   const upperLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -49,20 +36,31 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
-function options () {
-  var promptLength = parseInt(confirm("Please input a number from 8-128 for the password length"));
-
-  var promptLowercase = prompt("Do you want to include lowercase characters? y/n");
-  if (answer === 'y' || answer === 'Y') {
-    passwordOptions;
-  } else {
+function generatePassword() {
+  var promptLength = parseInt(prompt("Please input a number from 8-128 for the password length"));
     
+  var promptLowercase = confirm("Do you want to include lowercase characters?");
+  if (promptLowercase === 'true')  {
+    const passwordOptions;
   }
 
-  var promptUppercase = confirm("Do you want to include uppercase characters? y/n");
-  
-  var promptNumbers = confirm("Do you want to include numbers? y/n");
-  
-  var promptSpecialChar = confirm("Do you want to include special characters? y/n");
-};
+  var promptUppercase = confirm("Do you want to include uppercase characters?");
+  if (promptUppercase === 'true' ) {
+
+  }
+
+  var promptNumbers = confirm("Do you want to include numbers?");
+
+  var promptSpecialChar = confirm("Do you want to include special characters?");
+    
+  const passwordOptions = {
+    promptLength: promptLength,
+    upperLetters: randomUpper,
+    lowerLetters: randomLower,
+    randNumbers: randomNumbers,
+    special: randomChar
+  }
+  console.log(passwordOptions,"passwordOptions");
+
+}
+// alert(writePassword);

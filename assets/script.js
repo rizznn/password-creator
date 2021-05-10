@@ -38,9 +38,6 @@ generateBtn.addEventListener("click", writePassword);
 
 function writePassword() {
   var promptLength = window.prompt("Please input a number from 8-128 for the password length")
-
-  var lengthOfP = +promptLength.value;
-  console.log(lengthOfP);
   
   var promptLowercase = window.prompt("Do you want to include lowercase characters? y/n");
   

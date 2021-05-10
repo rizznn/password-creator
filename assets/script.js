@@ -6,20 +6,33 @@
 //     length = (length % 7) + 6
 // }
 
-function randomLetters() {
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-  return letters[Math.floor(Math.random()*letters.length)];
+const passwordOptions = {
+  upperLetters: randomUpper,
+  lowerLetters: randomLower,
+  numberChar: randomNumbers,
+  specialChar: randomChar
+}
+
+function randomUpper() {
+  const upperLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  return upperLetters[Math.floor(Math.random()*upperLetters.length)];
+}
+function randomLower() {
+  const lowerLetters = 'abcdefghijklmnopqrstuvwxyz';
+  return lowerLetters[Math.floor(Math.random()*lowerLetters.length)];
 }
 
 function randomNumbers() {
-  const numbers = "0123456789";
-  return numbers[Math.floor(Math.random()*numbers.length)];
+  const randNumbers = '0123456789';
+  return randNumbers[Math.floor(Math.random()*randNumbers.length)];
 }
 
 function randomChar() {
-  const specialChar = '!@#$%^&*()_+~`|}{[]\:;?><,./-=';
-  return specialChar[Math.floor(Math.random()*specialChar.length)];
+  const special = '!@#$%^&*()_+~`|}{[]\:;?><,./-=';
+  return special[Math.floor(Math.random()*special.length)];
 }
+
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -36,14 +49,20 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-function writePassword() {
-  var promptLength = window.prompt("Please input a number from 8-128 for the password length")
+
+function options () {
+  var promptLength = parseInt(confirm("Please input a number from 8-128 for the password length"));
+
+  var promptLowercase = prompt("Do you want to include lowercase characters? y/n");
+  if (answer === 'y' || answer === 'Y') {
+    passwordOptions;
+  } else {
+    
+  }
+
+  var promptUppercase = confirm("Do you want to include uppercase characters? y/n");
   
-  var promptLowercase = window.prompt("Do you want to include lowercase characters? y/n");
+  var promptNumbers = confirm("Do you want to include numbers? y/n");
   
-  var promptUppercase = window.prompt("Do you want to include uppercase characters? y/n");
-  
-  var promptNumbers = window.prompt("Do you want to include numbers? y/n");
-  
-  var promptSpecialChar = window.prompt("Do you want to include special characters? y/n");
-}
+  var promptSpecialChar = confirm("Do you want to include special characters? y/n");
+};

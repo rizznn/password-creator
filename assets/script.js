@@ -20,7 +20,6 @@ function randomChar() {
 }
 
 
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -41,18 +40,24 @@ function generatePassword() {
     
   var promptLowercase = confirm("Do you want to include lowercase characters?");
   if (promptLowercase === 'true')  {
-    const passwordOptions;
+    var options = getPasswordOptions();
   }
 
   var promptUppercase = confirm("Do you want to include uppercase characters?");
   if (promptUppercase === 'true' ) {
-
+    var options = getPasswordOptions(); 
   }
 
   var promptNumbers = confirm("Do you want to include numbers?");
+  if (promptNumbers === 'true' ) {
+    var options = getPasswordOptions(); 
+  }
 
   var promptSpecialChar = confirm("Do you want to include special characters?");
-    
+  if (promptSpecialChar === 'true' ) {
+    var options = getPasswordOptions();
+  }
+
   const passwordOptions = {
     promptLength: promptLength,
     upperLetters: randomUpper,
@@ -60,7 +65,9 @@ function generatePassword() {
     randNumbers: randomNumbers,
     special: randomChar
   }
-  console.log(passwordOptions,"passwordOptions");
+  return passwordOptions;
+  // console.log(passwordOptions,"passwordOptions");
 
 }
-// alert(writePassword);
+
+// alert(`${options}`);
